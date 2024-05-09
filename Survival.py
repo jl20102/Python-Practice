@@ -35,6 +35,7 @@ class Player:
         self.x += x
         self.y += y
 
+# test
 
 # Reasource class
 class Reascource:
