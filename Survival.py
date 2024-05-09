@@ -4,6 +4,7 @@ import random
 pygame.init()
 
 # Constants 
+FPS=60
 SCREEN_WIDTH = 800
 SCREEN_HEIGHT = 600
 PLAYZER_SIZE = 20
@@ -13,10 +14,8 @@ WHITE = (255,255,255)
 RED = (255,0,0)
 GREEN = (0,255,0)
 BLACK= (0,0,0)
-
-ENEMYSPEED = 5
-PLAYERSPEED = 10
-
+ENEMY_SPEED=1
+PLAYER_SPEED=3
 screen = pygame.display.set_mode((SCREEN_WIDTH,SCREEN_HEIGHT))
 
 
@@ -53,7 +52,7 @@ class Enemy:
         self.x = random.randint(0,SCREEN_WIDTH - ENEMY_SIZE)
         self.y = random.randint(0,SCREEN_HEIGHT-ENEMY_SIZE)
         self.color = GREEN
-        self.speed = ENEMYSPEED
+        self.speed = ENEMY_SPEED
 
     def draw(self):
         pygame.draw.rect(screen, self.color,(self.x , self.y, ENEMY_SIZE,ENEMY_SIZE))
@@ -61,3 +60,4 @@ class Enemy:
     def move(self):
         self.x += random.randint(-self.speed, self.speed)
         self.y += random.randint(-self.speed, self.speed)
+        
